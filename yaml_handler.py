@@ -1,5 +1,4 @@
 import yaml
-from constants import *
 
 
 def read_yaml(file_path):
@@ -12,19 +11,27 @@ def read_yaml(file_path):
 
 
 def write_yaml(data):
-    with open('system_new1.yaml', 'w') as output:
+    with open('system_new.yaml', 'w') as output:
         output.write("---\n")
         yaml.dump(data, output, default_flow_style=False)
 
 
-def change_locale(orig, target):
-    print(orig)
-    print(target)
+def change_locale(target, src):
+    src_yaml = read_yaml("system_kr.yaml")
+    target_yaml = read_yaml("system_global.yaml")
+
+    src_regions = src_yaml.get("region_data")
+    target_regions = target_yaml.get("region_data")
+
+    src_region = src_regions.get(src)
+    target_region = target_regions.get(target)
+
+    temp_locale = target_region
+    temp_locale["available_locales"] = src_region["available_locales"]
+
+    src_yaml["region_data"][src] = temp_locale
+    write_yaml(src_yaml)
 
 
 if __name__ == '__main__':
-    file_path = "system.yaml"
-    org_yaml = read_yaml(file_path)
-    # print(yaml.dump(org_yaml, default_flow_style=False))
-    write_yaml(org_yaml)
-    change_locale(OC1, KR)
+    change_locale('NA', 'KR')
