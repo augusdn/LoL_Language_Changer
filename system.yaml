@@ -17,13 +17,13 @@ app:
   ux_helper_name: LeagueClientUxHelper
   ux_name: LeagueClientUx
 build:
-  branch: '8.24'
-  branch-full: Releases/8.24
-  code-build-id: 12841441
-  content-build-id: 12842061
-  game-branch: '8.24'
-  game-branch-full: Releases/8.24
-  game-data-build-id: 12853786
+  branch: '9.1'
+  branch-full: Releases/9.1
+  code-build-id: 12975350
+  content-build-id: 13087138
+  game-branch: '9.1'
+  game-branch-full: Releases/9.1
+  game-data-build-id: 13089914
   patchline: KR_CBT
   patchline-visible-name: ''
 default_region: KR
@@ -365,3 +365,5 @@ region_data:
         voice_domain: riotp0apne1.vivox.com
         voice_url: https://riotp0apne1.www.vivox.com/api2
     web_region: kr
+riot_client_environment:
+- RiotClient
