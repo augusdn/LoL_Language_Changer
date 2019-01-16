@@ -261,56 +261,56 @@ region_data:
   KR:
     available_locales:
     - ko_KR
-    default_locale: en_AU
+    default_locale: ko_KR
     rso:
       allow_lq_fallback: false
       kount:
         collector: prod02.kaxsdc.com
         merchant: '108000'
       token: eyJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJodHRwczpcL1wvYXV0aC5yaW90Z2FtZXMuY29tXC90b2tlbiIsInN1YiI6ImxvbCIsImlzcyI6ImxvbCIsImV4cCI6MTYwMTE1MTIxNCwiaWF0IjoxNTM4MDc5MjE0LCJqdGkiOiIwYzY3OThmNi05YTgyLTQwY2ItOWViOC1lZTY5NjJhOGUyZDcifQ.dfPcFQr4VTZpv8yl1IDKWZz06yy049ANaLt-AKoQ53GpJrdITU3iEUcdfibAh1qFEpvVqWFaUAKbVIxQotT1QvYBgo_bohJkAPJnZa5v0-vHaXysyOHqB9dXrL6CKdn_QtoxjH2k58ZgxGeW6Xsd0kljjDiD4Z0CRR_FW8OVdFoUYh31SX0HidOs1BLBOp6GnJTWh--dcptgJ1ixUBjoXWC1cgEWYfV00-DNsTwer0UI4YN2TDmmSifAtWou3lMbqmiQIsIHaRuDlcZbNEv_b6XuzUhi_lRzYCwE4IKSR-AwX_8mLNBLTVb8QzIJCPR-MGaPL8hKPdprgjxT0m96gw
-    rso_platform_id: OC1
+    rso_platform_id: KR
     servers:
       account_recovery:
-        forgot_password_url: https://recovery.riotgames.com/{{lang}}/forgot-password?region={{region}}
-        forgot_username_url: https://recovery.riotgames.com/{{lang}}/forgot-username?region={{region}}
+        forgot_password_url: https://signup.leagueoflegends.co.kr/Member/search03.php
+        forgot_username_url: https://signup.leagueoflegends.co.kr/Member/search01.php
       chat:
         allow_self_signed_cert: false
-        chat_host: chat.oc1.lol.riotgames.com
+        chat_host: chat.kr.lol.riotgames.com
         chat_port: 5223
-      discoverous_service_location: lolriot.pdx1.oc1
+      discoverous_service_location: lolriot.icn1.kr
       email_verification:
         external_url: https://email-verification.riotgames.com/api
       entitlements:
         entitlements_url: https://entitlements.auth.riotgames.com/api/token/v1
       lcds:
-        lcds_host: prod.oc1.lol.riotgames.com
+        lcds_host: prod.kr.lol.riotgames.com
         lcds_port: 2099
-        login_queue_url: https://lq.oc1.lol.riotgames.com/login-queue/rest/queues/lol
+        login_queue_url: https://lq.kr.lol.riotgames.com/login-queue/rest/queues/lol
         use_tls: true
       license_agreement_urls:
-        eula: http://oce.leagueoflegends.com/{language}/legal/eula
-        terms_of_use: http://oce.leagueoflegends.com/{language}/legal/termsofuse
+        eula: http://www.leagueoflegends.co.kr/?m=rules&cid=3
+        terms_of_use: http://www.leagueoflegends.co.kr/?m=rules&cid=1
       payments:
-        payments_host: https://plstore.oc1.lol.riotgames.com
+        payments_host: https://plstore.kr.lol.riotgames.com
       prelogin_config:
         prelogin_config_url: https://prod.config.patcher.riotgames.com
       rms:
         rms_heartbeat_interval_seconds: 60
-        rms_url: wss://us.edge.rms.si.riotgames.com:443
+        rms_url: wss://asia.edge.rms.si.riotgames.com:443
       service_status:
-        api_url: https://status.leagueoflegends.com/shards/oce/synopsis
-        human_readable_status_url: https://status.leagueoflegends.com/#oce
+        api_url: https://status.leagueoflegends.com/shards/kr/synopsis
+        human_readable_status_url: https://status.leagueoflegends.com/#kr
       store:
-        store_url: https://store.oc1.lol.riotgames.com
+        store_url: https://store.kr.lol.riotgames.com
       voice:
         access_token_uri: https://asia.vts.si.riotgames.com/access_token/v1
         auth_token_uri: https://asia.vts.si.riotgames.com/auth_token/v1
         jwt2gvt_url: null
         provider: vivox
         use_external_auth: true
-        voice_domain: riotp0apse2.vivox.com
-        voice_url: https://riotp0apse2.www.vivox.com/api2
-    web_region: oce
+        voice_domain: riotp0apne1.vivox.com
+        voice_url: https://riotp0apne1.www.vivox.com/api2
+    web_region: kr
   KR_TEST:
     available_locales:
     - ko_KR
