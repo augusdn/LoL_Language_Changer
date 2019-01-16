@@ -1,6 +1,7 @@
 import yaml
 import sys
 from constants import *
+import requests
 
 
 def read_yaml(file_path):
@@ -15,6 +16,18 @@ def read_yaml(file_path):
         print(errmsg)
         sys.exit()
 
+def read_yaml_online(url):
+    try:
+        r = requests.get(global_URI)
+        try:
+            content = yaml.load(r.text)
+            return content
+        except yaml.YAMLError as exc:
+            print(exc)
+    except FileNotFoundError as errmsg:
+        print(errmsg)
+        sys.exit()
+
 
 def write_yaml(data, file_name):
     with open(file_name, 'w') as output:
@@ -24,10 +37,12 @@ def write_yaml(data, file_name):
 
 def change_locale(target, src, path):
     yaml_path = path + '/system.yaml'
-    temp_path = path + '/system_global.yaml'
     backup_path = path + '/system.yaml.bak'
     src_yaml = read_yaml(yaml_path)
-    target_yaml = read_yaml(temp_path)
+    # Offline mode
+    #target_yaml = read_yaml(temp_path)
+    target_yaml = read_yaml_online(global_URI)
+
     write_yaml(src_yaml, backup_path)
 
     src_regions = src_yaml.get("region_data")
@@ -45,5 +60,5 @@ def change_locale(target, src, path):
 
 if __name__ == '__main__':
     destination_yaml = read_yaml("system_global.yaml")
-    change_locale(NA, KR, 'E:/leagueTest/leagueofLegends')
+    change_locale('NA', 'KR', 'E:/leagueTest/leagueofLegends')
 
